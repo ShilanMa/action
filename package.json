@@ -1,0 +1,12 @@
+{
+  "name": "actions",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@work.github.com:ShilanMa/action.git",
+  "author": "ShilanMa <117870522+ShilanMa@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "react": "^18.2.0"
+  }
+}

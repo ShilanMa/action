@@ -1,0 +1,16 @@
+# Operating system files
+.DS_Store
+
+# Environments
+.env
+
+# IDE files
+.idea/
+.vscode/
+
+# Dependency directories
+**/node_modules/
+.vscode/
+__pycache__
+.pytest_cache
+.venv/
