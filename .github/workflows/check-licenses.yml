@@ -1,0 +1,21 @@
+name: check-licenses
+
+on:
+  workflow_dispatch:
+      
+jobs:
+  check-licenses:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js and install dependencies
+        uses: servicerocket/actions/common/yarn-cached-dependencies@master
+        with:
+          node-version: 16
+      - id: foo
+        uses: actions/hello-world-composite-action@v1
+        with:
+          who-to-greet: 'Mona the Octocat'
+      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+        shell: bash
+
