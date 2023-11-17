@@ -8,10 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Setup Node.js and install dependencies
-        uses: servicerocket/actions/common/yarn-cached-dependencies@master
+
+      - uses: actions/setup-node@v2
         with:
           node-version: 16
+          cache: 'yarn'
+          registry-url: https://registry.npmjs.org
+      - run: yarn install --frozen-lockfile --ignore-scripts
       - id: foo
         uses: ./.github/actions/license-check
         with:
