@@ -16,3 +16,5 @@ jobs:
           registry-url: https://registry.npmjs.org
       - run: yarn install --frozen-lockfile --ignore-scripts
       - uses: ./.github/actions/license-check
+        with:
+          ignore-packages: 'actions@1.0.0;@forge/egress@1.2.8'
