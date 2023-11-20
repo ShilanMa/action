@@ -1,5 +1,6 @@
 console.log('hi there');
-import * as modulesLicense from './license-used.json' assert { type: 'json' };
+
+const modulesLicense = require('./license-used.json');
 
 const unknownList = ['UNKNOWN', 'UNLICENSED'];
 
@@ -37,7 +38,7 @@ const invalidLicenses = [
 
 const invalidModules = [];
 
-for (const [moduleName, moduleInfo] of Object.entries(modulesLicense.default)) {
+for (const [moduleName, moduleInfo] of Object.entries(modulesLicense)) {
   const licenses = moduleInfo.licenses;
   if (invalidLicenses.includes(licenses)) {
     invalidModules.push({ name: moduleName, moduleInfo });
