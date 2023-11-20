@@ -24,9 +24,11 @@ runs:
     - name: install license-checker library
       run: npm install -g license-checker
       shell: bash  
-    - run: license-checker --production  --json > ./license-used.json
+    - run: license-checker --production  --json > ${{ github.action_path }}/license-used.json
       shell: bash  
+    - run: cat license-used.json 
+      shell: bash
     - name: run validation script
-      run: node ./license-used.json
+      run: node ${{ github.action_path }}/license-used.json
       shell: bash
 

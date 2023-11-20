@@ -1,3 +1,4 @@
+console.log('hi there');
 import * as modulesLicense from './license-used.json' assert { type: 'json' };
 
 const unknownList = ['UNKNOWN', 'UNLICENSED'];
