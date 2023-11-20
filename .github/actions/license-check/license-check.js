@@ -1,4 +1,4 @@
-const modulesLicense = require('./license-used.json');
+const packageLicenses = require('./license-used.json');
 
 const unknownList = ['UNKNOWN', 'UNLICENSED'];
 
@@ -34,13 +34,14 @@ const invalidLicenses = [
   'MPL-2.0-no-copyleft-exception',
 ];
 
-const invalidModules = [];
+const invalidPackages = [];
 
-for (const [moduleName, moduleInfo] of Object.entries(modulesLicense)) {
-  const licenses = moduleInfo.licenses;
+for (const [packageName, packageInfo] of Object.entries(packageLicenses)) {
+  const licenses = packageInfo.licenses;
   if (invalidLicenses.includes(licenses)) {
-    invalidModules.push({ name: moduleName, moduleInfo });
+    invalidPackages.push({ name: packageName, packageInfo });
   }
 }
 
-console.error('Invalid Modules:', invalidModules);
+console.error('Invalid packages:', invalidPackages);
+process.stderr.write('Error! Packages with invalid license were found');
