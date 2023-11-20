@@ -26,7 +26,7 @@ runs:
       shell: bash  
     - run: license-checker --production  --json > ${{ github.action_path }}/license-used.json
       shell: bash  
-    - run: cat license-used.json 
+    - run: cat  ${{ github.action_path }}/license-used.json 
       shell: bash
     - name: run validation script
       run: node ${{ github.action_path }}/license-used.json
