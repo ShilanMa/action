@@ -1,5 +1,9 @@
-name: 'Hello World'
-description: 'Greet someone'
+name: 'validate packages license'
+description: 'validate packages license against list of invalid licenses list'
+inputs:
+  ignore-packages:
+    description: 'List of packages that should be ignored for validation license check. Syntax: package@version separated by semi-colon'
+    default: ''
 runs:
   using: "composite"
   steps:
@@ -8,10 +12,9 @@ runs:
     - name: install license-checker library
       run: npm install -g license-checker
       shell: bash  
-    - run: license-checker --production  --json > ${{ github.action_path }}/license-used.json
+    - name: get all packages license info as json
+      run: license-checker --production --excludePackages '${{ inputs.ignore-packages }}'  --json > ${{ github.action_path }}/license-used.json
       shell: bash  
-    - run: cat  ${{ github.action_path }}/license-used.json 
-      shell: bash
     - name: run validation script
       run: node ${{ github.action_path }}/license-check.js
       shell: bash
