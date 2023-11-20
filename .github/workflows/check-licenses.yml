@@ -17,7 +17,3 @@ jobs:
       - run: yarn install --frozen-lockfile --ignore-scripts
       - id: foo
         uses: ./.github/actions/license-check
-        with:
-          who-to-greet: 'Mona the Octocat'
-      - run: echo random-number ${{ steps.foo.outputs.random-number }}
-        shell: bash

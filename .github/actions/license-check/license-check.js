@@ -1,6 +1,7 @@
 console.log('hi there');
 
 const modulesLicense = require('./license-used.json');
+console.log('modulesLicense', modulesLicense);
 
 const unknownList = ['UNKNOWN', 'UNLICENSED'];
 
