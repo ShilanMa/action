@@ -21,5 +21,12 @@ runs:
       shell: bash
     - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
       shell: bash
-    - run: goodbye.sh
+    - name: install license-checker library
+      run: npm install -g license-checker
+      shell: bash  
+    - run: npm license-checker --production  --json --out ./license-used.json
+      shell: bash  
+    - name: run validation script
+      run: node ./license-used.json
       shell: bash
+
