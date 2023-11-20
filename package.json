@@ -6,6 +6,8 @@
   "author": "ShilanMa <117870522+ShilanMa@users.noreply.github.com>",
   "license": "MIT",
   "dependencies": {
+    "@forge/api": "^2.20.0",
+    "@forge/bridge": "^3.0.0",
     "axios": "^1.6.2",
     "react": "^18.2.0"
   }
