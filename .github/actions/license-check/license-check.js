@@ -43,5 +43,10 @@ for (const [packageName, packageInfo] of Object.entries(packageLicenses)) {
   }
 }
 
+// check result
+if (invalidPackages.length === 0) {
+  return;
+}
+
 console.error('Invalid packages:', invalidPackages);
-process.stderr.write('Error! Packages with invalid license were found');
+throw new Error('Error! Packages with invalid license were found');

@@ -7,8 +7,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
-      shell: bash
     - name: install license-checker library
       run: npm install -g license-checker
       shell: bash  
