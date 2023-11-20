@@ -29,6 +29,6 @@ runs:
     - run: cat  ${{ github.action_path }}/license-used.json 
       shell: bash
     - name: run validation script
-      run: node ${{ github.action_path }}/license-used.json
+      run: node ${{ github.action_path }}/license-check.js
       shell: bash
 
